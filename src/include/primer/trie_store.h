@@ -47,6 +47,8 @@ class TrieStore {
   // This mutex sequences all writes operations and allows only one write operation at a time.
   std::mutex write_lock_;
 
+  std::shared_mutex rw_lock_;
+
   // Stores the current root for the trie.
   Trie root_;
 };
